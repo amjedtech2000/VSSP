@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Requests</title>
+<link rel="stylesheet" href="Request.css">
+</head>
+<body>
+ <header class="header">
+        <a class="header__logo"><img width="150px" src="logo.png" alt="Logo"></a>
+        <nav class="header__menu">
+            <ul class="header__menu__list">
+                <li class="header__menu__item"><a class="header__menu__link" href="Session_tu.html">My Sessions </a></li>
+                <li class="header__menu__item"><a class="header__menu__link" href="Request_tu.html">My Requests</a></li>
+                <li class="header__menu__item"><a class="header__menu__link" href="index.html" target="_parent"  " > Logout</a></li>
+<li class="header__menu__item"><a class="header__menu__link" href="Profile.html" ><img src="Pic_tu.jpg " class=" profile-pic" alt="profile .pic "> </a></li>
+            </ul>
+              
+             
+            </ul>
+        </nav>
+    </header>
+
+<div class="container">
+   
+    <h1>My Requests</h1>
+    <div id="requestsDiv">
+<table id="Student table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Full name</th>
+                <th>Date & time</th>
+      
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Tutor data will be inserted here dynamically -->
+        </tbody>
+    </table>
+</div>
+</div>
+<script src="Request.js"></script>
+<?php
+// Mock data for demonstration
+$myRequests = [
+    ["id" => 1, "dateTime" => "2024-03-21 10:00"],
+    ["id" => 2, "dateTime" => "2024-03-22 11:00"]
+];
+
+$availableTutors = [
+    ["id" => 1, "dateTime" => "2024-03-21 10:00"],
+    ["id" => 2, "dateTime" => "2024-03-22 11:00"]
+];
+
+// Combine data into associative array
+$requestsData = ["myRequests" => $myRequests, "availableTutors" => $availableTutors];
+
+// Convert data to JSON format and return
+header('Content-Type: application/json');
+echo json_encode($requestsData);
+?>
+
+
+
+</body>
+</html>
